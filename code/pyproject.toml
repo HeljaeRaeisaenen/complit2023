@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "complit23"
+version = "0.1.0"
+description = "Complutational literacy course project"
+authors = ["HeljaeRaeisaenen <94612974+HeljaeRaeisaenen@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+korp = "^1.0.3"
+matplotlib = "^3.8.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
