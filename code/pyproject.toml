@@ -10,6 +10,7 @@ readme = "README.md"
 python = "^3.9"
 korp = "^1.0.3"
 matplotlib = "^3.8.2"
+numpy = "^1.26.2"
 
 
 [build-system]
