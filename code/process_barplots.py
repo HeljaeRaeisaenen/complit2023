@@ -25,14 +25,6 @@ with open('../data0/concordances.json', 'r', encoding='utf-8') as f:
         subforums[c['subforum']][c['hour']] += 1
 
 
-        #for cat in c["categories"]:
-        #    if cat not in subforums:
-        #        subforums[cat] = {}
-        #    if c['hour'] not in subforums[cat]:
-        #        subforums[cat][c['hour']] = []    
-        #    subforums[cat][c['hour']].append(c['word'])
-
-
 with open('../data0/count_all/all_S24.json', 'r', encoding='utf-8') as f:
     all = json.loads(f.read())
 
