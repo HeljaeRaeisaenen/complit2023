@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import json
 
 cat_list = ['insult', 'common', 'censored', 'body', 'religious', 'weak', 'women', 'men', 'slur']
@@ -42,5 +41,4 @@ for key,sub in categories_per_subforum.items():
 
     fig.clf()
     ax.cla()
-    print(key)
-    quit()
+
