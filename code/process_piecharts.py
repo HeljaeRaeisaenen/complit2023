@@ -41,4 +41,15 @@ for key,sub in categories_per_subforum.items():
 
     fig.clf()
     ax.cla()
+    plt.close()
+
+
+labels = list(categories.keys())
+sizes = list(categories.values())
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, autopct='%.0f%%')
+
+fig.suptitle(f'All of Suomi24', fontsize=16)
+
+fig.savefig(f"../data/figures/piechart_all.png")
 

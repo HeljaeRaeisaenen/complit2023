@@ -80,6 +80,8 @@ for subforum, count in subforums_counts_per_hour.items():
 
 ax.set_title('Percentage of swear words by subforum')
 ax.legend(bbox_to_anchor=(0.97, 0.97))
+plt.xlabel("Hour of the day")
+plt.ylabel("% of all posted words")
 
 plt.savefig("../data/figures/subforums_barplot.png")
 plt.show()

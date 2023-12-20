@@ -6,12 +6,12 @@ import time, csv, json
 def main():
     korppi = Korp(service_name="kielipankki")
 
-    corpora = ["S24"] # Suomi24 corpus 2001-2014
+    corpora = ['S24_2001', 'S24_2002', 'S24_2003', 'S24_2004', 'S24_2005', 'S24_2006', 'S24_2007', 'S24_2008', 'S24_2009', 'S24_2010', 'S24_2011', 'S24_2012', 'S24_2013', 'S24_2014', 'S24_2015', 'S24_2016', 'S24_2017', 'S24_2018', 'S24_2019', 'S24_2020'] # Suomi24 corpus 2001-2014
     query_words = read_query_words()
     #print(query_words)
     additional_parameters = {
         "show":["word", "lemma", "lemmacomp"],
-        "show_struct":["text","text_title","text_sect","text_sub","text_date","text_time"]
+        "show_struct":["text","text_title","text_sect","text_sub","text_date","text_time", "text_topic_name_top", "text_topic_names_set"]
     }
 
     hours = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
@@ -41,9 +41,10 @@ def main():
                 if c["structs"]["text_time"][0:2] == h:
                     result["hour"] = h
             result["date"] = c["structs"]["text_date"]
-            result["subforum"] = c["structs"]["text_sect"]
+            try:
+                result["subforum"] = c["structs"]["text_sect"]
+            except: result["subforum"] = c["structs"]["text_topic_name_top"]
             result["title"] = c["structs"]["text_title"]
-            result["user"] = c["structs"]["text_user"]
             result["tokens"] = c["tokens"]
 
             results.append(result)
