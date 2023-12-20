@@ -9,6 +9,7 @@ per_hour = {} #n of instances of swearing per hour
 total_per_hour = {} #n of tokens (words posted) per hour
 total_fractions = {} # swears/all per hour
 
+# data0 contains the S24 corpus concordances, data contains the total all conclusive
 with open('../data0/concordances.json', 'r', encoding='utf-8') as f:
     for row in f:
         c = json.loads(row)
@@ -25,10 +26,11 @@ with open('../data0/concordances.json', 'r', encoding='utf-8') as f:
         subforums[c['subforum']][c['hour']] += 1
 
 
+
 with open('../data0/count_all/all_S24.json', 'r', encoding='utf-8') as f:
     all = json.loads(f.read())
 
-    for h,n in all["corpora"]["S24"]["absolute"].items():
+    for h,n in all["total"]["absolute"].items():
         if h[:2] not in total_per_hour:
             total_per_hour[h[:2]] = 0
         total_per_hour[h[:2]] += int(n) 

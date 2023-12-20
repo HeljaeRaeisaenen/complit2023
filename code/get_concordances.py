@@ -6,7 +6,7 @@ import time, csv, json
 def main():
     korppi = Korp(service_name="kielipankki")
 
-    corpora = ['S24_2001', 'S24_2002', 'S24_2003', 'S24_2004', 'S24_2005', 'S24_2006', 'S24_2007', 'S24_2008', 'S24_2009', 'S24_2010', 'S24_2011', 'S24_2012', 'S24_2013', 'S24_2014', 'S24_2015', 'S24_2016', 'S24_2017', 'S24_2018', 'S24_2019', 'S24_2020'] # Suomi24 corpus 2001-2014
+    corpora = ['S24'] # Suomi24 corpus 2001-2014
     query_words = read_query_words()
     #print(query_words)
     additional_parameters = {
