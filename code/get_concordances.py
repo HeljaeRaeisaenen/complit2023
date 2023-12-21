@@ -28,8 +28,10 @@ def main():
 
         try:
             number, concordances = korppi.concordance(query, corpora, additional_parameters=additional_parameters) # all_concordances
-        except:
-            continue
+        except Exception as e:
+            if e == KeyboardInterrupt:
+                quit()
+            else: continue
 
 
         results = []
@@ -56,7 +58,7 @@ def main():
 
 
     end = time.time()
-    print(end-start)
+    print("Time: ", end-start)
 
 
 def read_query_words():
