@@ -35,7 +35,7 @@ with open('../data/count_all/all.json', 'r', encoding='utf-8') as f:
         total_per_hour[h[:2]] += int(n) 
 
 for h,n in total_per_hour.items():
-    total_fractions[h] = round(per_hour[h] / n * 100, n)
+    total_fractions[h] = per_hour[h] / n * 100
 
 # Plot all swear words across all Suomi24 forums:
     
@@ -61,7 +61,7 @@ unwanted_subs = ["Tori", "Kommentaattori", "Suomi24", "var cname = 0;  category 
 for key,s in subforums.items():
     fractions = {}
     for hour,n in total_per_hour.items():
-        fractions[hour] = round(s[hour]/n * 100, 3)
+        fractions[hour] = s[hour]/n * 100
 
     sub_fractions[key] = fractions
 
