@@ -1,5 +1,5 @@
 # Instructions for reproducing the pipeline
-If you want to run the pipeline and get the results for yourself, here are the instructions.
+If you want to run the pipeline and get the results for yourself, and you're using linux, here are the instructions. I don't know if this works the same on other operating systems.
 
 1. Copy the repository. Click the green 'Code'-button and download the zip. Unzip it.
 2. In the ´code´-folder, run the command line command `poetry install`. This install the needed dependencies.
