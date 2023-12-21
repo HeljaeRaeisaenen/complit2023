@@ -9,7 +9,6 @@ per_hour = {} #n of instances of swearing per hour
 total_per_hour = {} #n of tokens (words posted) per hour
 total_fractions = {} # swears/all per hour
 
-# data0 contains the S24 corpus concordances, data contains the total all conclusive
 with open('../data/concordances.json', 'r', encoding='utf-8') as f:
     for row in f:
         c = json.loads(row)

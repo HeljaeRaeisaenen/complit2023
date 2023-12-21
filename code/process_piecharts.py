@@ -8,7 +8,6 @@ categories_per_subforum = {}
 for cat in cat_list:
     categories[cat] = 0
 
-# data0 contains the S24 corpus concordances, data contains the total all conclusive
 with open('../data/concordances.json', 'r', encoding='utf-8') as f:
     for row in f:
         c = json.loads(row)
